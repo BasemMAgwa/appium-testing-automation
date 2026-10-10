@@ -1,0 +1,16 @@
+﻿Physical device: Xiaomi 2109119DG, Android 14, ADB serial withheld from the public report
+Run date: 2026-10-10
+ConnectMe command pattern: mvn '-Ddevice.udid=YOUR_SERIAL' '-Ddevice.label=phone' '-Ddevice.skipInitialization=true' '-Dtest=ConnectMeApkTest' test
+Chrome command pattern: mvn '-Ddevice.udid=YOUR_SERIAL' '-Ddevice.label=phone' '-Ddevice.skipInitialization=true' '-Dtest=ChromeWebTest' test
+
+-------------------------------------------------------------------------------
+Test set: dev.testingautomation.ConnectMeApkTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.95 s -- in dev.testingautomation.ConnectMeApkTest
+
+-------------------------------------------------------------------------------
+Test set: dev.testingautomation.ChromeWebTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.809 s -- in dev.testingautomation.ChromeWebTest
+
+

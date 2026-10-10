@@ -45,6 +45,17 @@ Set `-Dappium.url=http://127.0.0.1:4723` if the server differs. For a USB phone,
 mvn '-Ddevice.udid=YOUR_SERIAL' '-Ddevice.label=phone' '-Dtest=ConnectMeApkTest' test
 ```
 
+On the tested Xiaomi 2109119DG (Android 14), Appium Settings could be installed with a normal `adb install -r` command, but the phone rejected Appium's automatic `install -g` permission grant and would not start that helper during initialization. With **Install via USB** enabled, the following setup and run pattern passed for this phone:
+
+```powershell
+$settingsApk = Join-Path $env:USERPROFILE '.appium\node_modules\appium-uiautomator2-driver\node_modules\io.appium.settings\apks\settings_apk-debug.apk'
+adb -s YOUR_SERIAL install -r $settingsApk
+mvn '-Ddevice.udid=YOUR_SERIAL' '-Ddevice.label=phone' '-Ddevice.skipInitialization=true' '-Dtest=ConnectMeApkTest' test
+mvn '-Ddevice.udid=YOUR_SERIAL' '-Ddevice.label=phone' '-Ddevice.skipInitialization=true' '-Dtest=ChromeWebTest' test
+```
+
+`device.skipInitialization` sets Appium's `skipDeviceInitialization` capability. Use it only if normal session creation fails at the optional Appium Settings setup. Replace the serial with the one shown by `adb devices -l` for your phone.
+
 The Chrome test serves a small page from Java and uses `adb reverse` to make it reachable on the Android device. Chrome must be installed on that device. No external website or account is needed.
 
 JUnit reports are in `target/surefire-reports/`. Each test saves the final device screen to `evidence/runs/<device>/`. Screenshots are saved even if an assertion fails. The `evidence/runs/` directory is generated and ignored by Git; verified screenshots are copied into [`evidence/submission/`](evidence/submission/).
@@ -79,9 +90,9 @@ The locators above were confirmed against the emulator UI hierarchy; the Inspect
 
 - Doctor output: `evidence/appium-doctor.txt`; capture the terminal as a PNG for submission.
 - Emulator: passing Settings and ConnectMe test reports and screenshots in `evidence/submission/`.
-- Phone: connect a physical Android device and rerun at least one app test; save the report and screenshot.
+- Phone: passing ConnectMe and Chrome runs on the Xiaomi 2109119DG, with screenshots and the JUnit report in `evidence/submission/`.
 - Gestures: one passing report and screenshot for each test; a screen recording frame can additionally show pointer movement.
 - Chrome: passing report and screenshot.
 - Reference: [`APPIUM_JAVA_CHEAT_SHEET.md`](APPIUM_JAVA_CHEAT_SHEET.md).
 
-Some vendor phones also require **Install via USB** and **USB debugging (Security settings)** in Developer Options before Appium can install its helper APKs. The physical-device run and its screenshot require a connected, USB-authorized phone with those install permissions. Public GitHub publication requires access to the intended GitHub account.
+Some vendor phones also require **Install via USB** and **USB debugging (Security settings)** in Developer Options before Appium can install its helper APKs.

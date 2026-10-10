@@ -11,5 +11,7 @@ These PNG files are screenshots saved by passing Appium test runs on the Android
 | `slide-emulator.png` | Sliding the SeekBar changed its reported progress. |
 | `drag-drop-emulator.png` | Dragging one dot onto another displayed “Dropped!”. |
 | `chrome-emulator.png` | Chrome entered “Appium” and showed “Hello, Appium”. |
+| `connectme-phone.png` | A physical Xiaomi 2109119DG opened the ConnectMe login form. The test also asserted the entered email through the UI element. |
+| `chrome-phone.png` | Chrome on the physical phone entered “Appium” and showed “Hello, Appium”. |
 
-`emulator-test-results.txt` records the seven JUnit results. The doctor diagnostic is in `../appium-doctor.txt` and reports zero required fixes. A terminal screenshot of that output needs an interactive Windows console. A physical-device screenshot will be added after the device permits Appium's helper APK installation.
+`emulator-test-results.txt` records the seven emulator JUnit results. `phone-test-results.txt` records the two physical-device results. The doctor diagnostic is in `../appium-doctor.txt` and reports zero required fixes. A terminal screenshot of that output still needs an interactive Windows console.

@@ -32,6 +32,10 @@ abstract class BaseTest {
         if (!udid.startsWith("emulator-")) {
             options.setCapability("appium:ignoreHiddenApiPolicyError", true);
         }
+        // Use this only when a phone blocks Appium Settings during optional initialization.
+        if (Boolean.getBoolean("device.skipInitialization")) {
+            options.setCapability("appium:skipDeviceInitialization", true);
+        }
         driver = new AndroidDriver(
                 URI.create(System.getProperty("appium.url", "http://127.0.0.1:4723")).toURL(),
                 options);
