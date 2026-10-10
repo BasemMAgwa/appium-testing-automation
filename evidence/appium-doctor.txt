@@ -1,0 +1,44 @@
+node.exe : Running 7 doctor checks for the "uiautomator2" driver
+At C:\nvm\nodejs\appium.ps1:16 char:5
++     & "$basedir/node$exe"  "$basedir/node_modules/appium/index.js" $a ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Running 7 docto...omator2" driver:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+info Doctor ### Starting doctor diagnostics  ###
+info Doctor  ✔ ANDROID_HOME is set to: C:\Users\Dell\AppData\Local\Android\Sdk
+info Doctor    Checking adb, emulator
+info Doctor      'adb' exists in C:\Users\Dell\AppData\Local\Android\Sdk\platform-tools\adb.exe
+info Doctor      'emulator' exists in C:\Users\Dell\AppData\Local\Android\Sdk\emulator\emulator.exe
+info Doctor  ✔ adb, emulator exist in 'C:\Users\Dell\AppData\Local\Android\Sdk'
+info Doctor  ✔ JAVA_HOME is set to: C:\Program Files\Eclipse Adoptium\jdk-21.0.12.101-hotspot
+info Doctor  ✔ 'bin\java.exe' exists under 'C:\Program Files\Eclipse Adoptium\jdk-21.0.12.101-hotspot'
+WARN Doctor  ✖ bundletool.jar cannot be found
+WARN Doctor  ✖ ffmpeg.exe cannot be found
+WARN Doctor  ✖ gst-launch-1.0.exe and/or gst-inspect-1.0.exe cannot be found
+info Doctor ### Diagnostic completed, 0 required fixes needed, 3 optional fixes possible. ###
+info Doctor
+info Doctor ### Optional Manual Fixes ###
+info Doctor To fix these optional issues, please do the following manually:
+WARN Doctor  ➜ bundletool.jar is used to handle Android App bundles. Please download the binary from
+https://github.com/google/bundletool/releases/ and store it to any folder listed in the PATH environment variable.
+Folders that are currently present in PATH: C:\Users\Dell\AppData\Local\Programs\Apache\apache-maven-3.9.16\bin;C:\User
+s\Dell\AppData\Local\Android\Sdk\platform-tools;C:\Users\Dell\.codex\tmp\arg0\codex-arg0ou9zUU;C:\Program Files\Common
+Files\Oracle\Java\javapath;C:\Program Files\Microsoft SDKs\Azure\CLI2\wbin;C:\Windows\system32;C:\Windows;C:\Windows\Sy
+stem32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program
+Files\Git\cmd;C:\Users\Dell\AppData\Roaming\nvm;C:\nvm\nodejs;C:\Program
+Files\dotnet\;D:\Docker\Docker\resources\bin;C:\Program Files\WSL\;C:\Users\Dell\AppData\Local\Programs\PHP\8.4.22;C:\U
+sers\Dell\AppData\Local\Composer;C:\Users\Dell\AppData\Local\Microsoft\WindowsApps;C:\Users\Dell\.dotnet\tools;C:\Users
+\Dell\AppData\Local\Programs\Microsoft VS
+Code\bin;C:\Users\Dell\AppData\Local\Programs\cursor\resources\app\bin;C:\Users\Dell\flutter\bin;C:\Program Files\Postg
+reSQL\18\bin;C:\Users\Dell\AppData\Local\Programs\Antigravity\bin;C:\Users\Dell\AppData\Local\Programs\MySQL\mysql-8.4.
+9-winx64\bin;C:\Users\Dell\AppData\Local\Python\bin;C:\Users\Dell\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\D
+ell\AppData\Local\Pub\Cache\bin;C:\Users\Dell\bin;c:\Users\Dell\.vscode\extensions\openai.chatgpt-26.51007.21434-win32-
+x64\bin\windows-x86_64
+WARN Doctor  ➜ ffmpeg.exe is used to capture screen recordings from the device under test. Please read
+https://www.ffmpeg.org/download.html.
+WARN Doctor  ➜ gst-launch-1.0.exe and gst-inspect-1.0.exe are used to stream the screen of the device under test.
+Please read https://gstreamer.freedesktop.org/documentation/installing/index.html?gi-language=c.
+info Doctor
+info Doctor Bye! All issues have been fixed!
+info Doctor
