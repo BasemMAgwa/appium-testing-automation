@@ -65,6 +65,16 @@ Appium Inspector 2026.9.2 is installed under `%LOCALAPPDATA%\Programs\AppiumInsp
 
 For ConnectMe, replace package/activity with `com.example.connectme` / `.MainActivity` and add `appium:app` pointing to the APK. For Chrome, use `browserName: chrome` instead of app capabilities. The tests use stable IDs for native controls, accessibility descriptions for labeled Flutter and ApiDemos controls, and XPath only when the UI exposes no useful ID or when a result title must be distinguished from repeated breadcrumb text. Reinspect these locators if the app or Android image changes.
 
+| Test | Element | Locator observed on the emulator |
+| --- | --- | --- |
+| Settings | Search bar | ID `com.android.settings:id/search_action_bar` |
+| Settings | Display result | XPath `//android.widget.TextView[@resource-id='android:id/title' and @text='Display']` |
+| ConnectMe | Get Started | Accessibility ID `GET STARTED` |
+| ConnectMe | Login button | Accessibility ID `LOG IN` |
+| ConnectMe | Email field | XPath `(//android.widget.EditText)[1]` because the current Flutter build exposes no resource ID for it |
+
+The locators above were confirmed against the emulator UI hierarchy; the Inspector session recipe lets you review them visually and update them for another app build or device.
+
 ## Evidence checklist
 
 - Doctor output: `evidence/appium-doctor.txt`; capture the terminal as a PNG for submission.
