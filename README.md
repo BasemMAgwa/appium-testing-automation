@@ -88,7 +88,7 @@ For ConnectMe, replace package/activity with `com.example.connectme` / `.MainAct
 | ConnectMe | Login button | Accessibility ID `LOG IN` |
 | ConnectMe | Email field | XPath `(//android.widget.EditText)[1]` because the current Flutter build exposes no resource ID for it |
 
-The locators above were confirmed against the emulator UI hierarchy; the Inspector session recipe lets you review them visually and update them for another app build or device.
+The locators above were confirmed against the emulator UI hierarchy and visually rechecked in Appium Inspector. The search bar ID, Display result XPath, GET STARTED and LOG IN accessibility IDs, and first email EditText XPath each returned one matching element. Inspector views are saved in [`evidence/submission/`](evidence/submission/). Reinspect them if the app or Android image changes.
 
 ## Evidence checklist
 

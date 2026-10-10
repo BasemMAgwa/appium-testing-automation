@@ -15,3 +15,5 @@ These PNG files are screenshots saved by passing Appium test runs on the Android
 | `chrome-phone.png` | Chrome on the physical phone entered “Appium” and showed “Hello, Appium”. |
 
 `emulator-test-results.txt` records the seven emulator JUnit results. `phone-test-results.txt` records the two physical-device results. The doctor diagnostic is in `../appium-doctor.txt` and reports zero required fixes. A terminal screenshot of that output still needs an interactive Windows console.
+
+Appium Inspector locator verification is captured in `inspector-settings-search.png`, `inspector-settings-display.png`, `inspector-connectme-start.png`, `inspector-connectme-login.png`, `inspector-connectme-email.png`, and `inspector-connectme-email-hint.png`. The first five show the selected element and its locator panel; the last shows the email field's `hint=Email` attribute. Each locator search returned one matching element.
