@@ -4,9 +4,13 @@ This Maven/JUnit project exercises Android Settings, the built `ConnectMe` APK, 
 
 ## Windows setup
 
-1. Install Node.js, a JDK (21 was used here), Apache Maven, Android Studio with SDK Platform Tools and an Android emulator image, and Appium Inspector.
-2. In Windows Environment Variables, set `ANDROID_HOME` to the Android SDK directory and `JAVA_HOME` to the JDK directory. Add `%ANDROID_HOME%\platform-tools` and Maven's `bin` directory to `Path`. Open a **new** PowerShell window after changing these variables.
-3. Install and check Appium's Android driver:
+The verified machine uses Windows 11, Node.js 22.14, JDK 21, Maven 3.9.16, Appium 3.8.0, UiAutomator2 driver 8.7.0, Appium Inspector 2026.9.2, and an Android 13 AVD named `Phone`. Android Studio and its SDK were already present; the JDK, Maven, Appium, driver, and Inspector were configured for this project.
+
+1. Install Node.js and check `node --version` and `npm --version` in a new PowerShell window.
+2. Install Android Studio. In **SDK Manager**, install Android SDK Platform Tools, an Android platform, and an emulator system image. In **Device Manager**, create and start an AVD; this project used the Android 13 `Phone` AVD.
+3. Install JDK 21 and Apache Maven. After setting `JAVA_HOME` in the next step, check that `mvn -version` reports Java 21.
+4. In Windows Environment Variables, set `ANDROID_HOME` to the Android SDK directory and `JAVA_HOME` to the JDK directory. Add `%ANDROID_HOME%\platform-tools` and Maven's `bin` directory to `Path`. Open a **new** PowerShell window after changing these variables. On the verified machine, the SDK is `%LOCALAPPDATA%\Android\Sdk`.
+5. Install and check Appium's Android driver:
 
    ```powershell
    npm install --global appium
@@ -17,7 +21,7 @@ This Maven/JUnit project exercises Android Settings, the built `ConnectMe` APK, 
 
    Appium 3 uses `appium driver doctor uiautomator2` for this check. On the setup machine it reported **0 required fixes**; the actual output is in [`evidence/appium-doctor.txt`](evidence/appium-doctor.txt). Bundletool, FFmpeg, and GStreamer were optional warnings.
 
-4. Start the Android Studio AVD named `Phone`, then verify `adb devices -l` lists `emulator-5554` as `device`. Start Appium in a separate terminal with `appium`. For this AVD's older Chrome 109, start it with `appium --allow-insecure=uiautomator2:chromedriver_autodownload` so Appium can obtain a matching Chromedriver.
+6. Install Appium Inspector, then start the Android Studio AVD named `Phone`. Verify `adb devices -l` lists `emulator-5554` as `device`. Start Appium in a separate terminal with `appium`. For this AVD's older Chrome 109, start it with `appium --allow-insecure=uiautomator2:chromedriver_autodownload` so Appium can obtain a matching Chromedriver.
 
 ## APK fixtures
 
